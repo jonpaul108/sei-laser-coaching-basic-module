@@ -1,4 +1,8 @@
-# Direct Access
+# Data Structure Access
+
+This lesson is for practicing direct access of data using dot and bracket notation.
+*Loops/iterations should not be used to solve these problems.*
+If you believe a loop is needed, read the directions again, or check the example input/ouputs for clarification. There are hints in each problem as to the why no loops are needed.
   ### !challenge
 
 * type: code-snippet
