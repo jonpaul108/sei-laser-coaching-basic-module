@@ -1,6 +1,6 @@
 
 
-# Direct Access
+# Objects
   ### !challenge
 
 * type: code-snippet
