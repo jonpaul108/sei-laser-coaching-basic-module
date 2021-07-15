@@ -1,0 +1,23 @@
+{
+  "name": "01-prompt-pool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonpaul108/sei-laser-coaching-basic-module.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonpaul108/sei-laser-coaching-basic-module/issues"
+  },
+  "homepage": "https://github.com/jonpaul108/sei-laser-coaching-basic-module#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-markdown-it": "^0.1.1"
+  }
+}

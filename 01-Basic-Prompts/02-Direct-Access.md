@@ -2,7 +2,7 @@
 
 This lesson is for practicing direct access of data using dot and bracket notation.
 *Loops/iterations should not be used to solve these problems.*
-If you believe a loop is needed, read the directions again, or check the example input/ouputs for clarification. There are hints in each problem as to the why no loops are needed.
+If you believe a loop is needed, read the directions again, or check the example input/ouputs for clarification. 
   ### !challenge
 
 * type: code-snippet
@@ -12,8 +12,6 @@ If you believe a loop is needed, read the directions again, or check the example
 
 ### !question
 
-
-Write a function named `Given Index`
 Given a string and an index, return the character at the given index. 
 
 ```js
@@ -39,13 +37,13 @@ function givenIndex(str, ind) {
 ```js
 describe('givenIndex', function() {
 
-  it("return type should be a string", function() {
+  it("should return a string", function() {
     expect(givenIndex('aa', 1)).to.be.a('string')
   })
 
   it("should return the expected character", function() {
-    expect(givenIndex('easy goes it', 6)).to.deeply.eq('o')
-    expect(givenIndex('Tribe'), 0).to.deeply.eq('T')
+    expect(givenIndex('easy goes it', 6)).to.deep.equal('o')
+    expect(givenIndex('Tribe', 0), 0).to.deep.equal('T')
   })
 
   it("should not iterate", function() {
@@ -53,7 +51,7 @@ describe('givenIndex', function() {
   })
 
   it("should not split the given string", function() {
-    expect(funcString).to.not.include('.split');
+    expect(givenIndex.toString()).to.not.include('.split');
   })
 
 })
@@ -74,7 +72,7 @@ describe('givenIndex', function() {
 
 ### !question
 
-Given an array and an index, return the word at the given index;
+Given an array and an index, return the word at the given index.
 
 ```js
   var actual = givenIndex2(['no', 'loop', 'necessary'], 1);
@@ -103,9 +101,9 @@ describe('givenIndex', function() {
       expect(givenIndex2(['a','a'], 1)).to.be.a('string')
     })
 
-    it("should return the expected charcter", function() {
-      expect(givenIndex2(['easy', 'goes', 'it', ], 2)).to.deeply.eq('it')
-      expect(givenIndex2(['Tribe']), 0).to.deeply.eq('Tribe')
+    it("should return the expected character", function() {
+      expect(givenIndex2(['easy', 'goes', 'it', ], 2)).to.deep.eq('it')
+      expect(givenIndex2(['Tribe'],0)).to.deep.eq('Tribe')
     })
 
     it("should not iterate", function() {
@@ -164,8 +162,8 @@ function objectAccess(obj, char) {
 describe('objectAccess', function() {
 
     it("should return the expected value", function() {
-      expect(objectAccess({a:'gym', b:'pizzaria',c:'shops'},'a')).to.deeply.eq('gym');
-      expect(objectAccess({'call': 'phone', 'text': 'cellphone', 'browse': 'internet'}, 'browse')).to.deeply.eq('internet')
+      expect(objectAccess({a:'gym', b:'pizzaria',c:'shops'},'a')).to.deep.eq('gym');
+      expect(objectAccess({'call': 'phone', 'text': 'cellphone', 'browse': 'internet'}, 'browse')).to.deep.eq('internet')
     })
 
     it("should not iterate", function() {
@@ -208,7 +206,7 @@ describe('objectAccess', function() {
 #### !placeholder
 
 ```js
-function longerWord(obj, char) {
+function longerWord(arr, idx1, idx2) {
 
 }
 ```
@@ -220,6 +218,7 @@ function longerWord(obj, char) {
 
 ```js
 describe('longerWord', function() {
+
   var arr1 = ['splendid', 'ski', 'hammer', 'giant', 'liquids'];
   var arr2 = ['factory', 'track', 'helmet', 'nail'];
 
@@ -228,14 +227,14 @@ describe('longerWord', function() {
   })
 
     it("should return the expected index", function() {
-      expect(longerWord(str1, 1, 2)).to.deeply.eq(2);
-      expect(longerWord(str1, 1, 4)).to.deeply.eq(4);
-      expect(longerWord(str2, 0, 1)).to.deeply.eq(0);
-      expect(longerWord(str2, 3, 2)).to.deeply.eq(2);
+      expect(longerWord(arr1, 1, 2)).to.deep.eq(2);
+      expect(longerWord(arr1, 1, 4)).to.deep.eq(4);
+      expect(longerWord(arr2, 0, 1)).to.deep.eq(0);
+      expect(longerWord(arr2, 3, 2)).to.deep.eq(2);
     })
 
     it("should not iterate", function() {
-      expect(longerWordtoString()).to.not.include('for')
+      expect(longerWord.toString()).to.not.include('for')
     })
 
 })
@@ -254,7 +253,7 @@ describe('longerWord', function() {
 
 ### !question
 
-Given an array of objects (arr), an index (ind) and a key (k), return the value at the key in the object existing in the array at the given index.
+Given an array of objects (arr), an index (ind) and a key (k), return the value at the key from the object designated by the given index.
   
   
   
@@ -331,10 +330,10 @@ describe('nestedAccess', function() {
 
 
     it("should return the expected value", function() {
-      expect(nestedAccess(arr1, 0, 'city')).to.deeply.eq('Paris');
-      expect(nestedAccess(arr1, 2, 'month')).to.deeply.eq('December');
-      expect(nestedAccess(arr2, 3, 'day')).to.deeply.eq('Friday');
-      expect(nestedAccess(arr2, 1, 'item')).to.deeply.eq('orange juice');
+      expect(nestedAccess(arr1, 0, 'city')).to.deep.eq('Paris');
+      expect(nestedAccess(arr1, 2, 'month')).to.deep.eq('December');
+      expect(nestedAccess(arr2, 3, 'day')).to.deep.eq('Friday');
+      expect(nestedAccess(arr2, 1, 'item')).to.deep.eq('orange juice');
     })
 
     it("should not iterate", function() {
@@ -363,11 +362,10 @@ describe('nestedAccess', function() {
 
 ### !question
 
-Given an array of expected weather information and an index number, return the weather information found at the key 'expected weather' at the given index.
+Given an array of weather information and an index number, return the weather information found at the key 'expected weather' at the given index.
     
   
 ```js
-  
     
     var actual = weatherInfo([
         {
@@ -432,17 +430,17 @@ describe('weatherInfo', function() {
         },
         {
           date: 'December 16th',
-          'expected weather:': 'hail'
+          'expected weather': 'hail'
         }
     ]
     //add in checking for loops
 
 
     it("should return the expected weather information", function() {
-      expect(weatherInfo(arr1, 0)).to.deeply.eq('sunny');
-      expect(weatherInfo(arr1, 1)).to.deeply.eq('cloudy');
-      expect(weatherInfo(arr2, 2)).to.deeply.eq('hail');
-      expect(weatherInfo(arr2, 0)).to.deeply.eq('rainy');
+      expect(weatherInfo(arr1, 0)).to.deep.eq('sunny');
+      expect(weatherInfo(arr1, 1)).to.deep.eq('cloudy');
+      expect(weatherInfo(arr2, 2)).to.deep.eq('hail');
+      expect(weatherInfo(arr2, 0)).to.deep.eq('rainy');
     })
 
     it("should not iterate", function() {
@@ -450,8 +448,9 @@ describe('weatherInfo', function() {
     })
 
     it("should not use methods \"Object.keys\" or \"Object.values\"", function() {
-      expect(weatherInfo.toString()).to.not.include('Object.keys')
-      expect(weatherInfo.toString()).to.not.include('Object.values')
+      var funcStr = weatherInfo.toString();
+      expect(funcStr).to.not.include('Object.keys')
+      expect(funcStr).to.not.include('Object.values')
     })
 
 })
@@ -528,10 +527,10 @@ describe('sumInnerArrayNums', function() {
   })
 
     it("should return the expected sum", function() {
-      expect(sumInnerArrayNums(arr1)).to.deeply.eq(16);
-      expect(sumInnerArrayNums(arr4)).to.deeply.eq(-950);
-      expect(sumInnerArrayNums(arr3)).to.deeply.eq(0);
-      expect(sumInnerArrayNums(arr2)).to.deeply.eq(4);
+      expect(sumInnerArrayNums(arr1)).to.deep.eq(16);
+      expect(sumInnerArrayNums(arr4)).to.deep.eq(-950);
+      expect(sumInnerArrayNums(arr3)).to.deep.eq(0);
+      expect(sumInnerArrayNums(arr2)).to.deep.eq(4);
     })
 
   it("should not iterate", function() {
@@ -590,26 +589,8 @@ describe('middle', function() {
     const arr3 = [1, 6, 8];
     const str1 = 'villa';
     const str2 = 'prehistoric';
-
     const funcString = middle.toString();
   
-
-    const arr2 = [
-      [1, 5, 3]
-    ]
-
-    const arr3 = [
-      [0,0]
-    ];
-
-    const arr4 = [
-      [50, 100, 3, -1000]
-    ]
-
-  it("should work with input type array or string", function() {
-    expect(middle([1,2,3]) === 2).to.deeply.eq(true);
-    expect(middle('123') === 2).to.deeply.eq(true);
-  })
 
   if("should not mutate a given array", function() {
     const arr1Copy = [...arr1];
@@ -621,12 +602,11 @@ describe('middle', function() {
     expect(funcString).to.not.include('.split');
   })
 
-  it("should return the expected sum", function() {
-    expect(middle(arr3)).to.deeply.eq(6);
-    expect(middle(arr1)).to.deeply.eq(4);
-    expect(middle(arr4)).to.deeply.eq(5);
-    expect(middle(arr3)).to.deeply.eq('l');
-    expect(middle(arr2)).to.deeply.eq('s');
+  it("should return the expected element or character", function() {
+    expect(middle(arr3)).to.deep.eq(6);
+    expect(middle(arr1)).to.deep.eq(4);
+    expect(middle(str1)).to.deep.eq('l');
+    expect(middle(str2)).to.deep.eq('s');
   })
 
 

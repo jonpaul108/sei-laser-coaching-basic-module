@@ -402,7 +402,7 @@ describe('replaceChar', function() {
 
 ### !question
 
-`defaultKey` takes in three arguments: an object (obj), a key (k), and a value (val). If k is not a property on the given obj, add the property with val as the value. Return the given object. 
+`DvefaultKey` takes in three arguments: an object (obj), a key (k), and a value (val). If k is not a property on the given obj, add the property with val as the value. Return the given object. 
 
      
 
@@ -440,7 +440,7 @@ expected2 = {
 #### !placeholder
 
 ```js
-function addProperty(obj, k, val) {
+function defaultKey(obj, k, val) {
   if (obj['key'] === undefined) {
     obj.k = val;
   } 

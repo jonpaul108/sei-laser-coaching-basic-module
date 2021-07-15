@@ -11,7 +11,7 @@
 ### !question
 
 
-Given an object (obj) and a string (secondaryKey), if 'key' is a key on the object, return the value found at 'key.' Otherwise, return the value found at the given string. Assume either 'key' or 'secondaryKey' will always exist on the object.
+Given an object (obj) and a property (prop), if 'key' is a key on the object, return the value found at 'key.' Otherwise, return the value found at prop. Assume either 'key' or prop will always exist on the object.
 
 ```js
 
@@ -41,7 +41,7 @@ Given an object (obj) and a string (secondaryKey), if 'key' is a key on the obje
 #### !placeholder
 
 ```js
-function secondaryKey(str, ind) {
+function secondaryKey(obj, prop) {
 
 }
 ```
