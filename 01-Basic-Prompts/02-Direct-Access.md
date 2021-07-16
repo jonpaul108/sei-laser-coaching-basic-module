@@ -72,7 +72,7 @@ describe('givenIndex', function() {
 
 ### !question
 
-Given an array and an index, return the word at the given index.
+Given an array of words and an index, return the word at the given index.
 
 ```js
   var actual = givenIndex2(['no', 'loop', 'necessary'], 1);
@@ -253,7 +253,7 @@ describe('longerWord', function() {
 
 ### !question
 
-Given an array of objects (arr), an index (ind) and a key (k), return the value at the key from the object designated by the given index.
+Given an array of objects (arr), an index (ind), and a key (k), return the value at the key from the object designated by the given index.
   
   
   
