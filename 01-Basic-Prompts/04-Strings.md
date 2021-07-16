@@ -3,12 +3,12 @@
 * type: code-snippet
 * id: strings-1
 * language: javascript
-* title: firstAndThird
+* title: First And Third
 
 ### !question
 
-Given a string, combine the first and third characters of the string. Return the result. 
-Do not split or iterate to solve this prompt.
+`FirstAndThird` takes in a string and returns a the first and third character combined into a single string.  
+*Do not split or iterate to solve this prompt.*
         
  
 
@@ -45,11 +45,11 @@ describe('firstAndThird', function() {
     })
 
     it("should return the correct string", function() {
-      expect(firstAndThird('hello')).to.deeply.eq('hl');
-      expect(firstAndThird('jumanji')).to.deeply.eq('jm');
-      expect(firstAndThird('worth')).to.deeply.eq('wr');
-      expect(firstAndThird('tell')).to.deeply.eq('tl');
-      expect(firstAndThird('scary')).to.deeply.eq('sa');
+      expect(firstAndThird('hello')).to.deep.eq('hl');
+      expect(firstAndThird('jumanji')).to.deep.eq('jm');
+      expect(firstAndThird('worth')).to.deep.eq('wr');
+      expect(firstAndThird('tell')).to.deep.eq('tl');
+      expect(firstAndThird('scary')).to.deep.eq('sa');
     })
 
     it("should not split the string", function() {
@@ -110,9 +110,9 @@ describe('lengthOfStringsMultiplied', function() {
     })
 
     it("should return the correct number", function() {
-      expect(lengthOfStringsMultiplied('hello', 'hello')).to.deeply.eq(25);
-      expect(lengthOfStringsMultiplied('cash', 'money')).to.deeply.eq(20);
-      expect(lengthOfStringsMultiplied('a','b')).to.deeply.eq(1);
+      expect(lengthOfStringsMultiplied('hello', 'hello')).to.deep.eq(25);
+      expect(lengthOfStringsMultiplied('cash', 'money')).to.deep.eq(20);
+      expect(lengthOfStringsMultiplied('a','b')).to.deep.eq(1);
     })
 
     it("should not split the string", function() {
@@ -139,7 +139,7 @@ describe('lengthOfStringsMultiplied', function() {
 
 ### !question
 
-Given two strings, use the length of the second string as an index in the first. Return the character found at the index.
+`LengthAsIndex` takes in two strings, `str1` and `str2`. Return the character of `str1` that exists at the index matching the length of `str2`. The length of`str1` will always be greater than the length of `str2`
 
  
 
@@ -167,27 +167,26 @@ function lengthAsIndex(str1, str2) {
 ### !tests
 
 ```js
-describe('lengthAsIndex', function() {
+describe("lengthAsIndex", function () {
+  
+  it("should return a string", function () {
+    expect(lengthAsIndex("hello", "hell")).to.be.a("string");
+  });
 
-    it("should return a string", function() {
-      expect(lengthAsIndex('hello', 'hello')).to.be.a('string');
-    })
+  it("should return the character of str1 found at the length of str2", function () {
+    expect(lengthAsIndex("hello", "hell")).to.deep.eq("o");
+    expect(lengthAsIndex("cash", "mo")).to.deep.eq("s");
+    expect(lengthAsIndex("ab", "b")).to.deep.eq("b");
+  });
 
-    it("should return the correct character", function() {
-      expect(lengthAsIndex('hello', 'hell')).to.deeply.eq('o');
-      expect(lengthAsIndex('cash', 'mo')).to.deeply.eq('s');
-      expect(lengthAsIndex('ab','b')).to.deeply.eq('b');
-    })
+  it("should not split the string", function () {
+    expect(lengthAsIndex("hello", "h").toString()).to.not.include(".split");
+  });
 
-    it("should not split the string", function() {
-     expect(lengthAsIndex('hello', 'h').toString()).to.not.include('.split');    
-    })
-
-    it("should not iterate", function() {
-     expect(lengthAsIndex.toString()).to.not.include('for');   
-    })
-
-})
+  it("should not iterate", function () {
+    expect(lengthAsIndex.toString()).to.not.include("for");
+  });
+});
 ```
 ### !end-tests
 
@@ -203,8 +202,7 @@ describe('lengthAsIndex', function() {
 
 ### !question
 
-Given a string, return the sum of the indexes where a character can be found.
-
+Given a string, return the sum of the indexes.
 
 
 ```js
@@ -226,7 +224,7 @@ Given a string, return the sum of the indexes where a character can be found.
 #### !placeholder
 
 ```js
-function sumIndex(str1, str2) {
+function sumIndex(str) {
 
 
 }
@@ -245,9 +243,9 @@ describe('sumIndex', function() {
     })
 
     it("should return the correct character", function() {
-      expect(sumIndex('hello')).to.deeply.eq(10);
-      expect(sumIndex('s')).to.deeply.eq(0);
-      expect(sumIndex('str1')).to.deeply.eq(6);
+      expect(sumIndex('hello')).to.deep.eq(10);
+      expect(sumIndex('s')).to.deep.eq(0);
+      expect(sumIndex('str1')).to.deep.eq(6);
     })
 
     it("should not split the string", function() {
@@ -269,7 +267,7 @@ describe('sumIndex', function() {
 
 ### !question
 
-Given two strings, return true if the second string is a mirror of the first, and false if not.
+Given two strings `str1` and `str2`, return true if `str2` is the reverse of `str1`, and false if not. 
 
 
 
@@ -307,13 +305,19 @@ function isMirror(str1, str2) {
 describe('isMirror', function() {
 
     it("should return a boolean", function() {
-      expect(isMirror('hello', )).to.be.a('boolean');
+      expect(isMirror('hello', 'olleh')).to.be.a('boolean');
     })
 
-    it("should return the correct character", function() {
-      expect(isMirror('hello', 'olleh')).to.deeply.eq(true);
-      expect(isMirror('s', 's')).to.deeply.eq(true);
-      expect(isMirror('str1', 'trs1')).to.deeply.eq(false);
+    it("should return true if `str2` is a reversed copy of `str1`", function() {
+      expect(isMirror('hello', 'olleh')).to.deep.eq(true);
+      expect(isMirror('s', 's')).to.deep.eq(true);
+      expect(isMirror('str1', 'trs1')).to.deep.eq(false);
+    })
+
+    it("should return false if `str2` is not a reversed copy of `str1`", function() {
+      expect(isMirror('hello', 'oll')).to.deep.eq(false);
+      expect(isMirror('s', 'a')).to.deep.eq(false);
+      expect(isMirror('str1', 'trs1')).to.deep.eq(false);
     })
 
 })
@@ -331,7 +335,7 @@ describe('isMirror', function() {
 
 ### !question
 
-Given a string an array of index numbers, use the index numbers to combine characters in the string into a new word. 
+Given a string `str` and an array of index numbers `indexes`, use the index numbers to combine characters in the string into a new word. 
 The indexes are in order from left to right.
 
 
@@ -369,19 +373,19 @@ function hiddenWord(str, indexes) {
 ### !tests
 
 ```js
-describe('hiddenWord', function() {
+describe("hiddenWord", function () {
+   
+   it("should return a string", function () {
+     expect(hiddenWord("hello", [0,1])).to.be.a("string");
+   });
 
-    it("should return a string", function() {
-      expect(hiddenWord('hello', )).to.be.a('string');
-    })
+   it("should return the correct word", function () {
+     expect(hiddenWord("lejfmdofne2", [0, 1, 4, 6, 8])).to.deep.eq("lemon");
+     expect(hiddenWord("inner till gift", [6, 0, 11, 3, 4])).to.deep.eq("tiger");
+     expect(hiddenWord("same", [1, 2])).to.deep.eq("am");
+   });
 
-    it("should return the correct character", function() {
-      expect(hiddenWord( 'lejfmdofne2', [0,1,4,6,8])).to.deeply.eq('lemon');
-      expect(hiddenWord( 'inner till gift', [6, 0, 11, 3, 4])).to.deeply.eq('tiger');
-      expect(hiddenWord('same', [1,2])).to.deeply.eq('am');
-    })
-
-})
+ });
 ```
 ### !end-tests
 

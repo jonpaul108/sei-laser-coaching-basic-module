@@ -229,7 +229,7 @@ describe('stringOrArrayOfNums', function() {
 
     it("should return a boolean", function() {
       expect(everyObject([...arr], 'really')).to.be.a('boolean');
-       expect(everyObject([...arr], 'French')).to.be.a('boolean');
+      expect(everyObject([...arr], 'French')).to.be.a('boolean');
     })
 
     it("should return the correct boolean", function() {
