@@ -10,11 +10,11 @@ For best results, follow your coach's instructions on where to focus your practi
 ######
 
 
-## Expectations
+## Learning Objectives
 
 By practicing the problems in this section, you will gain or review the following:
 ######
-* *Accuracy in accessing data structures*
+* *Accuracy in basic JS syntax application*
 * *Deep understanding of mutability and immutability*
 * *Improved debugging skills and awareness*
 * *Insight into javascript flow of execution*
