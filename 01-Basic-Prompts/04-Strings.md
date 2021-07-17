@@ -9,7 +9,7 @@ By the end of this lesson you should have reviewed:
 - string iteration
 - string comparisons
 
-Good luck!
+
 
 ##
 
