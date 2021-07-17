@@ -16,8 +16,8 @@ Standards:
     Path: /01-Basic-Prompts/01-Read-me.md
     UID: aa0fd02b43aed3cdd261c71d1da853a3
   - Type: Lesson
-    Path: /01-Basic-Prompts/02-Direct-Access.md
-    UID: 67319071d1da7960cf1b5082cf725f1b
+    Path: /01-Basic-Prompts/02-Data-Access.md
+    UID: 1945285a18afe46a209e13920f87c892
   - Type: Lesson
     Path: /01-Basic-Prompts/03-Objects.md
     UID: e023d2bddd82c101a2501a361e993577
