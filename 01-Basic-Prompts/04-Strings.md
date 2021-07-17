@@ -1,3 +1,12 @@
+#Strings
+
+An often forgotten topic is strings. Strings are a useful type for data "that can be represented in text form" [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String]. This lesson will give you plenty of review practice to get you back up to speed on your string understanding.
+By the end of this lesson you should have reviewed:
+- concatenation 
+- string access
+- string iteration
+- string comparisons
+
 ### !challenge
 
 * type: code-snippet

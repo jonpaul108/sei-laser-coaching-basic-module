@@ -6,6 +6,7 @@ The goal is for the student to deepen their understanding of:
 - indexes in strings and arrays
 - dot vs bracket with objects
 - chaining dot and bracket notation
+- decreased reliance on unnecessary loops
   
 By the time you finish this lesson, you will be less reliant on unnecessary loops. 
 Our recommendation is to pay close attention to the prompt details, and example inputs and outputs. Together, the instructions and the inputs/outputs should present a clear picture as to the expected structure of data, providing enough information to clarify why a loop is unnecessary in each situation.
@@ -140,7 +141,7 @@ describe('givenIndex', function() {
 
 ### !question
 
-Given an object and a key (char), return the value found at the key.
+Given an object `obj` and a key `char`, return the value found at `char`.
   
   
 ```js
