@@ -1,8 +1,15 @@
 # Data Structure Access
 
-This lesson is for practicing direct access of data using dot and bracket notation.
-*Loops/iterations should not be used to solve these problems.*
-If you believe a loop is needed, read the directions again, or check the example input/ouputs for clarification. 
+This unit challenges understanding of data access using dot and bracket notation, indexes, and keys.
+All prompts are solvable without iterations of any kind. In other words, *Loops/iterations should not be used to solve these problems.*
+The goal is for the student to deepen their understanding of:
+- indexes in strings and arrays
+- dot vs bracket with objects
+- chaining dot and bracket notation
+  
+By the time you finish this lesson, you will be less reliant on unnecessary loops. 
+Our recommendation is to pay close attention to the prompt details, and example inputs and outputs. Together, the instructions and the inputs/outputs should present a clear picture as to the expected structure of data, providing enough information to clarify why a loop is unnecessary in each situation.
+If you believe a loop is needed, read the prompt directions again, or check the example input/outputs for clarification. 
   ### !challenge
 
 * type: code-snippet

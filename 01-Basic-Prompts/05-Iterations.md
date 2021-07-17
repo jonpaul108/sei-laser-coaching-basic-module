@@ -12,7 +12,9 @@
 
 
 Write a function named `pushEveryIndex`
-  Given an array of strings, push every index, plus a colon, plus the word to a new array. 
+  Given an array of strings `arr`, push every index and the word found at the index to a new array, and return the new array.
+  The format should look like: 
+  `[[index]: [word], [index]: [word]]`
 
 ```js
   //Expected answer
@@ -43,7 +45,7 @@ describe('pushEveryIndex', function() {
       expect(pushEveryIndex([])).to.be.an('array')
     })
 
-    it("should return the expected array", function() {
+    it("should return an array of elements having form index-colon-word", function() {
       expect(pushEveryIndex(['turtle', 'fox', 'wolf'])).to.eql(['0: turtle', '1: fox', '2: wolf'])
       expect(pushEveryIndex(['mouse', 'cow', 'wolf', 'dog'])).to.eql(['0: mouse', '1: cow', '2: wolf', '3: dog'])
     })
@@ -51,7 +53,7 @@ describe('pushEveryIndex', function() {
     it("should return an array of strings", function() {
       expect(pushEveryIndex(['salad'])).to.satisfy(function(arr) {
         return arr.every(el => {
-          return  el instanceof 'string';
+          return typeof el === 'string';
         })
       })
     })
@@ -73,7 +75,8 @@ describe('pushEveryIndex', function() {
 
 
 Write a function named `pushFromStart`
-  Given an array and starting number, push every element from the start to the end of the array.
+Given an array `arr` and starting number `start`, push every element from `start` in `arr` to a new array. 
+Return the new array.
 
 ```js
   //example array
@@ -109,7 +112,7 @@ describe('pushFromStart', function() {
     var arr1 = ['magneto', 'spiderman', 'star lord', 'wolverine', 'iron man', 'doctor strange', 'black widow'];
 
     it("should return an empty array when given an empty array", function() {
-      expect(pushFromStart([])).to.be.an('array')
+      expect(pushFromStart([],0)).to.be.an('array')
     })
 
     it("should return an empty array if the given number is greater than the greatest valid indexed", function() {
@@ -121,11 +124,7 @@ describe('pushFromStart', function() {
       expect(pushFromStart(arr1, 5)).to.eql(['doctor strange', 'black widow'])
     })
   
-    it("should return an array of strings", function() {
-      expect(pushFromStart(['salad'], 0)).to.satisfy(function (arr) {
-        return arr.every(el => typeof el === 'string');
-      } )
-    })
+ 
 })
 ```
 ### !end-tests
@@ -143,8 +142,8 @@ describe('pushFromStart', function() {
 ### !question
 
 Write a function named `startToEnd`
-Given an array, a start number, and an end number, return a new array of every element from the start to one before the end number.
-If the end number is greater than the length of the array, include `undefined` for invalid index.
+Given an array `arr`, a start number `start`, and an end number `end`, return a new array of every element from `start` to one before `end`.
+If `end` is greater than the length of `arr`, include `undefined` for invalid index.
   
 
 ```js
@@ -181,10 +180,6 @@ describe('startToEnd', function() {
 
     var arr1 = ['magneto', 'spiderman', 'star lord', 'wolverine', 'iron man', 'doctor strange', 'black widow'];
 
-    it("should return an empty array when given an empty array", function() {
-      expect(startToEnd([])).to.be.an('array')
-    })
-
     it("should return an empty array if the start number and end number are equal", function() {
       expect(startToEnd(['feather', 'bird'], 1, 1)).to.eql([])
     })
@@ -219,7 +214,7 @@ describe('startToEnd', function() {
 
 ### !question
 
-Given an array or a string and a number, iterate from 0 by the number and push each elements or characters to a new array.
+Given an array or a string `data` and a number `num`, iterate over `data` from 0 by `num` and push each element or character to a new array, and return the new array. If num is less than or equal to 0, return an empty array
 Return the new array.
 
 
@@ -243,7 +238,7 @@ Return the new array.
 #### !placeholder
 
 ```js
-function iterateByNum(items, num) {
+function iterateByNum(data, num) {
 
 }
 ```
@@ -277,8 +272,9 @@ describe('iterateByNum', function() {
     })
 
     it("should work with strings and arrays", function() {
-      expect(iterateByNum(['l'], 1)).to.eq(['l'])
-      expect(iterateByNum('l', 1)).to.eq(['l'])
+      expect(iterateByNum(['a'], 1)).to.eql(['a'])
+
+      expect(iterateByNum('l', 1)).to.eql(['l'])
     })
 
     it("should return an empty array if the given number is less than or equal to 0", function() {
@@ -291,20 +287,15 @@ describe('iterateByNum', function() {
       expect(iterateByNum([...arr2], 2)).to.eql(['meteor', 'moon', 'solar wind'])
       expect(iterateByNum([...arr1], 1)).to.eql(arr1);
       expect(iterateByNum([...arr1], 20)).to.eql(['magneto']);
-      expect(iterateByNum(str, 4)).to.eql(['t', 'p', 'e'];);
+      expect(iterateByNum(str, 4)).to.eql(['t', 'p', 'e']);
     })
   
     it("should return an array of strings", function() {
-      expect(iterateByNum([...arr], 3, 6)).to.satisfy(function (arr) {
+      expect(iterateByNum([...arr1], 3, 6)).to.satisfy(function (arr) {
         return arr.every(el => typeof el === 'string');
       } )
     })
 
-    it("should return an array of strings", function() {
-      expect(iterateByNum([...arr], 3, 6)).to.satisfy(function (arr) {
-        return arr.every(el => typeof el === 'string');
-      } )
-    })
 })
 ```
 ### !end-tests
@@ -321,12 +312,12 @@ describe('iterateByNum', function() {
 
 ### !question
 
- Given a string or an array of characters and a target character, return the index of the first instance (starting from index 0) a character is found. Return -1 if it is not found.
- Do not use the 'split' method.
+ Given a string or an array of characters `data` and a target character `target`, return the index of the first instance (starting from index 0) `target` appears in `data`. Return -1 if it is not found.
+ *Do not use the 'split' method.*
 
 ```js
   var chars1 = 'find me waiting';
-  var actual1 = firstInstance(chars1, 'i');
+  var actual1 = firstInstance(data, 'i');
   var expected = 1;
   
   var chars2 = ['a', 'b', 'c', 'a', 'd', 'a', 'd', 'b', 'c'];
@@ -364,7 +355,7 @@ describe('firstInstance', function() {
 
    it("should work with strings and arrays", function() {
       expect(firstInstance(['l'], 'l' ), "Default value is incorrect").to.deep.eq(0)
-      expect(firstInstance('l', l), "Default value is incorrect").to.deep.eq(0)
+      expect(firstInstance('l', 'l'), "Default value is incorrect").to.deep.eq(0)
     })
 
     it("should return -1 if the character is not found in the string", function() {
@@ -394,7 +385,7 @@ describe('firstInstance', function() {
 
 ### !question
 
- Given a string or an array of characters and a target character, return the index of the last instance a character is found. Return -1 if it is not found.
+ Given a string or an array of characters `chars` and a target character `target`, return the index of the last instance `target` is found in `chars`. Return -1 if `target` is not found.
  Do not use the 'split' method.
   
 
@@ -469,7 +460,7 @@ describe('lastInstance', function() {
 
 ### !question
 
-Given a string that will always contain two lower case 'x' characters, return an array containing the two indexes where the 'x' characters are found.
+Given a string `str` that will always contain two lower case 'x' characters, return an array containing the two indexes where the 'x' characters are found.
   
 
 ```js
@@ -487,7 +478,7 @@ Given a string that will always contain two lower case 'x' characters, return an
 #### !placeholder
 
 ```js
-function twoIndexes(str, target) {
+function twoIndexes(str) {
 
 }
 ```
@@ -505,7 +496,7 @@ describe('twoIndexes', function() {
     var str3 = 'xXx';
 
     it("should return an array", function() {
-      expect(Array.isArray(twoIndexes(str1)), "Default value is incorrect").to.deep.eq(true)
+      expect(twoIndexes(str1)).to.be.an('array')
     })
 
     it("should return the expected index numbers", function() {
@@ -534,8 +525,8 @@ describe('twoIndexes', function() {
 
 ### !question
 
-  Given a string that will always contain two lower case 'x' characters, return how many characters are between the x's exclusive of the start and ending 'x.'
-  
+  Given a string `str` that will always contain two lower case 'x' characters, return how many characters are between the x's exclusive of the start and ending 'x.'
+  *note:  this problem is probably too hard for beginner*
 
 ```js
   var str1 = 'aDfxkjexty';
@@ -552,7 +543,7 @@ describe('twoIndexes', function() {
 #### !placeholder
 
 ```js
-function twoIndexesExclusive(str, target) {
+function twoIndexesExclusive(str) {
 
 }
 ```
@@ -568,20 +559,23 @@ describe('twoIndexesExclusive', function() {
     var str1 = 'aDfxklexty';
     var str2 = 'xtestx';
     var str3 = 'xXx';
-    var str4 = 'xx;
+    var str4 = 'xx';
 
-    it("should return an array", function() {
-      expect(typeof twoIndexesExclusive(str1), "Default value is incorrect").to.deep.eq('number')
+    it("should return a number", function() {
+      expect(twoIndexesExclusive(str1)).to.be.a('number')
     })
 
-    it("should return the expected index numbers", function() {
-      expect(twoIndexesExclusive(str1)).to.deeply.eq(3);
-      expect(twoIndexesExclusive(str2)).to.deeply.eq(4)
-      expect(twoIndexesExclusive(str3)).to.deeply.eq(1);
-      expect(twoIndexesExclusive(str4)).to.deeply.eq(0);
-
+    it("should return the correct number of characters between the lower case 'x' characters", function() {
+      expect(twoIndexesExclusive(str1)).to.deep.eq(3);
+      expect(twoIndexesExclusive(str2)).to.deep.eq(4)
+      expect(twoIndexesExclusive(str3)).to.deep.eq(1);
+      expect(twoIndexesExclusive(str4)).to.deep.eq(0);
     })
-  
+
+    it("should not use the split method", function() {
+      expect(twoIndexesExclusive.toString()).to.not.include('.split');
+    })
+
 })
 ```
 ### !end-tests
@@ -597,7 +591,7 @@ describe('twoIndexesExclusive', function() {
 
 ### !question
 
-  Given a string or an array of characters and a target character, return true if every matches the target character or false if not.
+  Given a string or an array of characters `chars` and a target character `target`, return true if every character in `chars` matches `target` or false if any characters do nto match `target`.
   
 
 ```js
@@ -637,16 +631,20 @@ describe('everyCharMatch', function() {
     var chars3 = ['x','x', 'x', 'x', 'x', 'x', 'k'];
 
     it("should return a boolean", function() {
-      expect(typeof everyCharMatch('x', 'x'), "Default value is incorrect").to.deep.eq('boolean')
-      expect(typeof everyCharMatch('a', 'x'), "Default value is incorrect").to.deep.eq('boolean')
+      expect(everyCharMatch('x', 'x')).to.be.a('boolean')
+      expect(everyCharMatch('a', 'x')).to.be.a('boolean')
     })
 
     it("should return the expected boolean value", function() {
-      expect(everyCharMatch(chars1, 'x')).to.deeply.eq(true)
-      expect(everyCharMatch(chars2, 'k')).to.deeply.eq(false);
-      expect(everyCharMatch(chars3, 'x')).to.deeply.eq(false);
-      expect(everyCharMatch(['f', 'f', 'f'], 'f')).to.deeply.eq(true);
-      expect(everyCharMatch('aaa', 'e')).to.deeply.eq(false);
+      expect(everyCharMatch(chars1, 'x')).to.deep.eq(true)
+      expect(everyCharMatch(chars2, 'k')).to.deep.eq(false);
+      expect(everyCharMatch(chars3, 'x')).to.deep.eq(false);
+      expect(everyCharMatch(['f', 'f', 'f'], 'f')).to.deep.eq(true);
+      expect(everyCharMatch('aaa', 'e')).to.deep.eq(false);
+    })
+
+    it("should not use the split method", function() {
+      expect(everyCharMatch.toString()).to.not.include('.split');
     })
   
 })
@@ -664,7 +662,7 @@ describe('everyCharMatch', function() {
 
 ### !question
 
-    Given a string or an array of characters and a target character, return true if every other character (starting from index 0) matches the target, or false if not.
+    Given a string or an array of characters `chars` and a target character `target`, return true if every other character (starting from index 0) in `chars` matches `target`, or false if a character does not match.
   
 
 ```js
@@ -704,16 +702,16 @@ describe('everyOtherCharMatch', function() {
     var chars3 = ['x','x', 'x', 'x', 'x', 'k', 'x'];
 
     it("should return a boolean", function() {
-      expect(typeof everyCharMatch('x', 'x')).to.be.a('boolean')
-      expect(typeof everyCharMatch('a', 'x'), "Default value is incorrect").to.be.a('boolean')
+      expect(everyOtherCharMatch('x', 'x')).to.be.a('boolean')
+      expect(everyOtherCharMatch('a', 'x')).to.be.a('boolean')
     })
 
     it("should return the expected boolean value", function() {
-      expect(everyCharMatch(chars1, 'x')).to.deeply.eq(true)
-      expect(everyCharMatch(chars2, 'k')).to.deeply.eq(false);
-      expect(everyCharMatch(chars3, 'x')).to.deeply.eq(true);
-      expect(everyCharMatch(['f', 'a', 'f'], 'f')).to.deeply.eq(true);
-      expect(everyCharMatch('aaa', 'e')).to.deeply.eq(false);
+      expect(everyOtherCharMatch(chars1, 'x')).to.deep.eq(true)
+      expect(everyOtherCharMatch(chars2, 'k')).to.deep.eq(false);
+      expect(everyOtherCharMatch(chars3, 'x')).to.deep.eq(true);
+      expect(everyOtherCharMatch(['f', 'a', 'f'], 'f')).to.deep.eq(true);
+      expect(everyOtherCharMatch('aaa', 'e')).to.deep.eq(false);
     })
   
 })
@@ -733,7 +731,8 @@ describe('everyOtherCharMatch', function() {
 
 ### !question
 
-     Given 0 or a positive number, push the message 'I code everyday' into a new array as many times as the number. Return the new array.
+    Given a number `num` that is greater than or equal to 0, push the message 'I code everyday' into a new array as many times as the number.
+    Return the new array.
   
 
 ```js
@@ -763,14 +762,17 @@ function codeEveryday(num) {
 describe('codeEveryDay', function() {
 
     it("should return an array", function() {
-      expect(codeEveryDay(1)).to.be.an('array')
+      expect(codeEveryday(1)).to.be.an('array')
     })
 
-    it("should return the expected array", function() {
+    it("should return an array containing the phrase the correct number of times if given a positive number", function() {
       expect(codeEveryday(2)).to.eql(['I code everyday', 'I code everyday'])
       expect(codeEveryday(5)).to.eql(['I code everyday', 'I code everyday', 'I code everyday', 'I code everyday', 'I code everyday']);
-      expect(codeEveryday(0)).to.eql([]);
-      expect(codeEveryday(3)).to.eql(['I code everyday', 'I code everyday' 'I code everyday']);
+      expect(codeEveryday(3)).to.eql(['I code everyday', 'I code everyday', 'I code everyday']);
+    })
+
+    it("should return an empty array if the given number is 0", function() {
+        expect(codeEveryday(0)).to.eql([]);
     })
   
 })
@@ -789,7 +791,8 @@ describe('codeEveryDay', function() {
 
 ### !question
 
-  Given an array of numbers with an even number of elements, sum every two elements and push the numbers into a new array.
+  Given an array of numbers `arr` containing an even number of elements, sum every two elements and push the numbers into a new array.
+  Note: The new array should have half the length of the passed in array.
   
 
 ```js
@@ -809,7 +812,7 @@ describe('codeEveryDay', function() {
 #### !placeholder
 
 ```js
-function sumPairs(num) {
+function sumPairs(arr) {
 
 }
 ```

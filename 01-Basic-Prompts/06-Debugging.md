@@ -10,7 +10,7 @@
 ### !question
 
 
-Given a string, a starting index, and an ending index, get the characters from the start to end. The string should be inclusive of the start and end.
+Given a string `str`, a starting index `start`, and an ending index `end`, get the characters from the start to end. The string should be inclusive of the start and end.
       
 *The next problem will have you solve this with a method. This time, attempt to fix the issue using the for loop.*
 
@@ -47,9 +47,9 @@ describe('startToEnd1', function() {
   })
 
   it("should return the expected string", function() {
-    expect(startToEnd1('telescope', 2, 5)).to.deeply.eq('lesc')
-    expect(startToEnd1('liked'), 0, 3).to.deeply.eq('like')
-    expect(startToEnd1('wishy-washy'), 5, 10).to.deeply.eq('-washy')
+    expect(startToEnd1('telescope', 2, 5)).to.deep.eq('lesc')
+    expect(startToEnd1('liked', 0, 3)).to.deep.eq('like')
+    expect(startToEnd1('wishy-washy', 5, 10)).to.deep.eq('-washy')
   })
 
   it("should use a for loop", function() {
@@ -78,7 +78,7 @@ describe('startToEnd1', function() {
 ### !question
 
 
-*This problem is exactly the same as above. This time, correct the use of "slice" method to solve the issue.*
+*This problem is exactly the same as above. This time, correct the use of "slice" to solve the issue.*
 
 Given a string, a starting index, and an ending index, get the characters from the start to end. The string should be inclusive of the start and end.
       
@@ -113,9 +113,9 @@ describe('startToEnd2', function() {
   })
 
   it("should return the expected string", function() {
-    expect(startToEnd2('telescope', 2, 5)).to.deeply.eq('lesc')
-    expect(startToEnd2('liked'), 0, 3).to.deeply.eq('like')
-    expect(startToEnd2('wishy-washy'), 5, 10).to.deeply.eq('-washy')
+    expect(startToEnd2('telescope', 2, 5)).to.deep.eq('lesc')
+    expect(startToEnd2('liked', 0, 3)).to.deep.eq('like')
+    expect(startToEnd2('wishy-washy', 5, 10)).to.deep.eq('-washy')
   })
 
   it("should use the 'slice' method", function() {
@@ -143,7 +143,7 @@ describe('startToEnd2', function() {
 ### !question
 
 
-Given a string, a starting index, and an ending index,  get the characters from the start to end. The string should be exclusive of the start and end.
+Given a string `str`, a starting index `start`, and an ending index `end`,  return a new string of the characters from `start` to `end`. The new string should be exclusive of `start` and `end`.
       
 *The next problem will have you solve this with a method. This time, attempt to fix the issue using a 'for' loop.*
      
@@ -181,9 +181,9 @@ describe('exclusive1', function() {
   })
 
   it("should return the expected string", function() {
-    expect(exclusive1('telescope', 2, 5)).to.deeply.eq('es')
-    expect(exclusive1('liked'), 0, 3).to.deeply.eq('ik')
-    expect(exclusive1('wishy-washy'), 5, 10).to.deeply.eq('wash')
+    expect(exclusive1('telescope', 2, 5)).to.deep.eq('es')
+    expect(exclusive1('liked', 0, 3)).to.deep.eq('ik')
+    expect(exclusive1('wishy-washy', 5, 10)).to.deep.eq('wash')
   })
 
   it("should use a 'for' loop", function() {
@@ -211,7 +211,7 @@ describe('exclusive1', function() {
 ### !question
 
 
-Given a string, a starting index, and an ending index,  get the characters from the start to end. The string should be exclusive of the start and end.
+Given a string `str`, a starting index `start`, and an ending index `end`,  return a new string of the characters from `start` to `end`. The new string should be exclusive of `start` and `end`.
       
 *This problem is the same as the problem above. Solve it by debugging the "slice" method.*
      
@@ -245,9 +245,9 @@ describe('exclusive2', function() {
   })
 
   it("should return the expected string", function() {
-    expect(exclusive2('telescope', 2, 5)).to.deeply.eq('es')
-    expect(exclusive2('liked'), 0, 3).to.deeply.eq('ik')
-    expect(exclusive2('wishy-washy'), 5, 10).to.deeply.eq('wash')
+    expect(exclusive2('telescope', 2, 5)).to.deep.eq('es')
+    expect(exclusive2('liked'), 0, 3).to.deep.eq('ik')
+    expect(exclusive2('wishy-washy'), 5, 10).to.deep.eq('wash')
   })
 
   it("should use the 'slice' method", function() {
@@ -275,7 +275,7 @@ describe('exclusive2', function() {
 ### !question
 
 
-Given a string (name), return a name and the word 'hello' separated by a comma and a space
+Given a string `name`, return a string containing `name` and `'hello'` separated by a comma and a space
 
      
 
@@ -310,9 +310,9 @@ describe('concatMe', function() {
 
 
   it("should return the expected string", function() {
-    expect(concatMe('Josh')).to.deeply.eq('Josh, hello')
-    expect(concatMe('Tom')).to.deeply.eq('Tom, hello')
-    expect(concatMe('wishy-washy'), 5, 10).to.deeply.eq('wash')
+    expect(concatMe('Josh')).to.deep.eq('Josh, hello')
+    expect(concatMe('Tom')).to.deep.eq('Tom, hello')
+    expect(concatMe('Jeremy')).to.deep.eq('Jeremy, hello')
   })
 
 
@@ -339,7 +339,8 @@ describe('concatMe', function() {
 ### !question
 
 
-Given a string (str) and a character string (char), replace the first letter of str with char. Return the new string.
+Given a string `str` and a character `char`, replace the first letter of `str` with `char`. 
+Return the new string.
 
      
 
@@ -374,9 +375,9 @@ describe('replaceChar', function() {
 
 
   it("should return the expected string", function() {
-    expect(replaceChar('Josh', 'M')).to.deeply.eq('Mosh')
-    expect(replaceChar('jellow', 'm')).to.deeply.eq('mellow')
-    expect(replaceChar('lake', 'r'), 5, 10).to.deeply.eq('rake')
+    expect(replaceChar('Josh', 'M')).to.deep.eq('Mosh')
+    expect(replaceChar('jellow', 'm')).to.deep.eq('mellow')
+    expect(replaceChar('lake', 'r'), 5, 10).to.deep.eq('rake')
   })
 
 
@@ -402,7 +403,7 @@ describe('replaceChar', function() {
 
 ### !question
 
-`DvefaultKey` takes in three arguments: an object (obj), a key (k), and a value (val). If k is not a property on the given obj, add the property with val as the value. Return the given object. 
+`DefaultKey` takes in three arguments: an object `obj`, a key `k`, and a value `val`. If `k` is not a property on the given `obj`, add the property with `val` as the value at `k`. Return the given object. 
 
      
 
@@ -454,43 +455,50 @@ function defaultKey(obj, k, val) {
 ### !tests
 
 ```js
-describe('defaultKey', function() {
-
+describe("defaultKey", function () {
   var testObj1 = {
-    a: 'bee',
-    c: 'deli',
-    f: 'guard',
-  }
+    a: "bee",
+    c: "deli",
+    f: "guard",
+  };
 
   var testObj2 = {
-    arr1: ['hello', 'world'],
-    arr2: ['jelly', 'donut'],
-  }
+    arr1: ["hello", "world"],
+    arr2: ["jelly", "donut"],
+  };
 
+  it("should return an object", function () {
+    expect(defaultKey({ ...testObj1 }, "a", "free")).to.be.an("object");
+  });
 
-  it("should return an object", function() {
-    expect(defaultKey({...testObj1}, 'a', 'free')).to.be.an('object')
-  })
+  it("should have the expected key value pair", function () {
+    expect(defaultKey({ ...testObj1 }, "a", "free")).to.have.property(
+      "a",
+      "bee"
+    );
+    expect(defaultKey({ ...testObj1 }, "g", "dog")).to.have.property(
+      "g",
+      "dog"
+    );
+    expect(
+      defaultKey({ ...testObj2 }, "arr3", ["test"]),
+      5,
+      10
+    ).to.have.property("arr3").to.eql(['test']);
+    expect(defaultKey({ ...testObj2 }, "arr2", ["test"]), 5, 10)
+      .to.have.property("arr2")
+      .to.eql(["jelly", "donut"]);
+  });
 
+  it("should not iterate over the object", function () {
+    expect(defaultKey.toString()).to.not.include("for");
+  });
 
-  it("should have the expected key value pair", function() {
-    expect(defaultKey({...testObj1}, 'a', 'free')).to.have.property('a', 'bee');
-    expect(defaultKey({...testObj1}, 'g', 'dog')).to.have.property('g', 'dog');
-    expect(defaultKey({...testObj2}, 'arr3', ['test']), 5, 10).to.have.property('arr3', ['test']);
-     expect(defaultKey({...testObj2}, 'arr2', ['test']), 5, 10).to.have.property('arr2', ['jelly', 'donut']);
-  })
-
-
-  it("should not iterate over the object", function() {
-    expect(defaultKey.toString()).to.not.include('for');
-  })
-
-  it("should not use Object.keys or Object.values", function() {
-    expect(defaultKey.toString()).to.not.include('Object.keys');
-    expect(defaultKey.toString()).to.not.include('Object.values');
-  })
-
-})
+  it("should not use Object.keys or Object.values", function () {
+    expect(defaultKey.toString()).to.not.include("Object.keys");
+    expect(defaultKey.toString()).to.not.include("Object.values");
+  });
+});
 ```
 ### !end-tests
 
@@ -507,7 +515,7 @@ describe('defaultKey', function() {
 
 ### !question
 
-`findInfex` takes in an array of object. It should return the index of the array where the given key exists as a property. Return -1 if the key is not found.
+`findIndex` takes in an array of objects `arrOfObj` and string `key`. It should return the index of `arrayOfObj` where `key` exists as a property. Return -1 if `key` is not found.
 
      
 
@@ -530,10 +538,10 @@ var expected = 2;
 #### !placeholder
 
 ```js
-function findIndex(arr, key){
+function findIndex(arrOfObj, key){
   var index = 0;
-  for (var i = 0; i < arr.length; i ++) {
-    if (arr[i].key) {
+  for (var i = 0; i < arrOfObj.length; i ++) {
+    if (arrOfObj[i].key) {
       break;
     }
     index = i;
@@ -575,22 +583,18 @@ var arr2 = [
 
 
   it("should return the expected index", function() {
-    expect(findIndex([...arr], 'weird')).to.deeply.eq(2);
-    expect(findIndex([...arr], 'pants')).to.deeply.eq(0);
-    expect(findIndex([...arr2], 'socks')).to.deeply.eq(5);
+    expect(findIndex([...arr], 'weird')).to.deep.eq(2);
+    expect(findIndex([...arr], 'pants')).to.deep.eq(-1);
+    expect(findIndex([...arr2], 'socks')).to.deep.eq(5);
   })
 
   it("should return -1 if the key is not found", function() {
-    expect(findIndex([...arr2], 'tyme')).to.deeply.eq(-1);
-    expect(findIndex([...arr1], 'mold')).to.deeply.eq(-1);
+    expect(findIndex([...arr2], 'tyme')).to.deep.eq(-1);
+    expect(findIndex([...arr], 'mold')).to.deep.eq(-1);
   })
 
 
-  it("should not iterate over the object", function() {
-    expect(findIndex.toString()).to.not.include('for');
-  })
-
-  it("should not findIndexObject.keys or Object.values", function() {
+  it("should not use methods Object.keys or Object.values", function() {
     expect(findIndex.toString()).to.not.include('Object.keys');
     expect(findIndex.toString()).to.not.include('Object.values');
   })
@@ -614,7 +618,7 @@ var arr2 = [
 ### !question
 
 
-Given an array of strings and a target character, return a new array with each each string having the target character replaced with a space. 
+Given an array of strings `arrOfStr` and a target character `target`, return a new array of each element of `arrOfStr` having the `target` character replaced with a space. 
 Notes:
 The target will appear only once in each string
    
@@ -637,14 +641,21 @@ The target will appear only once in each string
 
 ```js
  function splitAtChar(arrOfStr, target) {
-    var newArr = [];
-    for (var i = 0; i < arrOfStr.length; i++) {
-      var currStr = arrOfStr[i];
-      var newStr = arrOfStr.split(target).join('');
-      newArr.push(newStr);
-    }
-    return newArr;
-  }
+   var newArr = [];
+   for (var i = 0; i < arrOfStr.length; i++) {
+     var currStr = arrOfStr[i];
+     var newStr = "";
+     for (var j = 0; j < currStr.length; j++) {
+       if (currStr[j] === target) {
+         newStr = " ";
+       } else {
+         newStr += currStr[j];
+       }
+     }
+     newArr.push(newStr);
+   }
+   return newArr;
+ }
 
 ```
 
@@ -665,9 +676,9 @@ describe('splitAtChar', function() {
   })
 
   it("should return the expected character", function() {
-    expect(splitAtChar([...arr1], '_')).to.eql(['tall tell', 'jumping frogs', 'serious dogs'];)
-    expect(splitAtChar([...arr2]), 'b').to.eql(['a a', 'a a', 'a a'];)
-    expect(splitAtChar([...arr3]), 5, 10).to.eql(['rainy day', 'warm day', 'sunny day', 'snowy day'])
+    expect(splitAtChar([...arr1], '_')).to.eql(['tall tell', 'jumping frogs', 'serious dogs'])
+    expect(splitAtChar([...arr2], 'b')).to.eql(['a a', 'a a', 'a a'])
+    expect(splitAtChar([...arr3], '+')).to.eql(['rainy day', 'warm day', 'sunny day', 'snowy day'])
   })
 
 })

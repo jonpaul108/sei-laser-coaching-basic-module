@@ -3,7 +3,12 @@
 
  ## Welcome
 
-Welcome to the basic section of the Laser Coaching curriculum. This is a great place to start refreshing and honing skills requiring accurate, precise knowledge of the basic building blocks of Javascript.
+Welcome to the basic section of the Laser Coaching curriculum. Here you will refresh and hone skills requiring accurate, precise knowledge of the basic building blocks of Javascript. Through prompts challenging you on a variety of topics, from accessing data structures to complex looping mechanisms, you will level up both problem solving ability and coding syntax knowledge. 
+
+Most problems lie in the beginner category. However, as you progress through a unit, you are likely to find difficulty and complexity increase to a level expected of an intermediate level. Similarly, the difficult of each successive unit tends to increase.
+For best results, follow your coach's instructions on where to focus your practice. 
+
+
 
 ## Expectations
 
@@ -42,4 +47,4 @@ Here are some recommendations:
 * *Take your coach's advice.*
 
 
-### Time for some problems!
+### Time for some problems! Good luck!
