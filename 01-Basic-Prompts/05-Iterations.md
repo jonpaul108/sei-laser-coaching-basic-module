@@ -1,11 +1,17 @@
 # Iterations
-This is the most challenging and longest unit in the basic section. While you may have come here directly, it is built upon the challenges presented in the previous four units. Your challenge is now to use all your knowledge of objects, arrays, and strings as well as iterations and data access to solve increasingly difficult prompts. The goal here is to review or acquire:
+This is the most challenging and longest unit in the basic section. While you may have come here directly, it is built upon the challenges presented in the previous four units. Your challenge is now to use all your knowledge of objects, arrays, and strings as well as iterations and data access to solve increasingly difficult prompts. 
+
+### Objectives
+The goal is to review or acquire:
 - complex iterations (including iterating by various numbers and decrementing)
 - general purpose iterations
 - elevated problem solving and prompt comprehension skills
 - deeper understanding of data and data structures
-
+######
 By the end of the unit, you will be solving prompts similar to beginning level of the intermediate section.
+######
+Good luck!
+##
 ### !challenge
 
 * type: code-snippet
