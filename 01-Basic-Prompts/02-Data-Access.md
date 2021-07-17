@@ -1,4 +1,4 @@
-# Data Structure Access
+# Data Access
 
 This unit challenges understanding of data access using dot and bracket notation, indexes, and keys.
 All prompts are solvable without iterations of any kind. In other words, *Loops/iterations should not be used to solve these problems.*

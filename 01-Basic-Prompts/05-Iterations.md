@@ -1,5 +1,5 @@
 # Iterations
-This is the most challenging and longest unit in the basic section. While you may have come here directly, it is built upon the challenges presented in the previous four units. Your challenge is now to use all your knowledge of objects, arrays, and strings as well as iterations and data access to solve increasingly difficult prompts. 
+This is the most challenging and longest unit in the basic section. While you may have come here directly, it is built upon the challenges presented in the previous three units. Your challenge is now to use all your knowledge of objects, arrays, and strings as well as iterations and data access to solve increasingly difficult prompts. 
 
 ### Objectives
 The goal is to review or acquire:
